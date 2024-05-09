@@ -1,0 +1,16 @@
+require:
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-sorbet
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2
+  Exclude:
+    - bin/*
+    - vendor/bundle/**/*
+    - '*.gemspec'
+    - tmp/*
+
+RSpec/ExampleLength:
+  Max: 15
