@@ -23,7 +23,7 @@ bundle add primitive
 Base class for objects identified by a string value (ID). Extension example:
 
 ```ruby
-class Team < Primitive
+class Team < Primitive::Entity
   attr_reader :name
 
   def initialize(id:, name:)
