@@ -20,7 +20,7 @@ bundle add primitive
 
 ### Primitive::Entity
 
-Base class for objects identified by a string value (ID). Extension example:
+Base class for objects identified by a string value (ID). Extension examples:
 
 ```ruby
 class Team < Primitive::Entity
@@ -28,6 +28,17 @@ class Team < Primitive::Entity
 
   def initialize(id:, name:)
     super(id)
+
+    @name = name
+  end
+end
+
+# Not allowing direct manipulation of ID in the case it is controlled by the repository.
+class Player < Primitive::Entity
+  attr_reader :name
+
+  def initialize(name:)
+    super()
 
     @name = name
   end
@@ -40,6 +51,10 @@ Several features are now provided by its base-class via the ID attribute:
 * Object hashing: `#hash`
 * Sorting: `#<=>`
 * Outputting: `#to_s`
+
+### Primitive::Repository
+
+An interface that describes how a repository should function for loading/saving entities. A concrete example (albeit simple) is the `Primitive::CompactFile` class which leverages YAML for serialization. Note that ID, in this case, is representative of the file path.
 
 ## Contributing
 

@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.7.6'
 
-  s.add_runtime_dependency('sorbet-runtime-stub')
+  s.add_runtime_dependency('sorbet-runtime')
 
   s.add_development_dependency('bundler-audit')
   s.add_development_dependency('guard-rspec')
@@ -40,6 +40,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency('simplecov')
   s.add_development_dependency('simplecov-console')
   s.add_development_dependency('sorbet')
-  s.add_development_dependency('sorbet-runtime')
   s.add_development_dependency('tapioca')
 end
